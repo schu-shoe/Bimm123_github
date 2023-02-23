@@ -1,0 +1,284 @@
+---
+title: "Halloween Mini Project"
+author: "Siena Schumaker"
+format: pdf
+---
+
+## Importing candy data
+
+```{r}
+candy_file <- "https://raw.githubusercontent.com/fivethirtyeight/data/master/candy-power-ranking/candy-data.csv"
+candy=read.csv(candy_file, row.names=1)
+head(candy)
+```
+
+>Q1. How many different candy types are in this dataset?
+
+```{r}
+nrow(candy)
+
+#85 different types of candy
+```
+
+>Q2. How many fruity candy types are in the dataset?
+
+```{r}
+table(candy$fruity)
+
+#38 fruity candy types
+```
+
+>Q3. What is your favorite candy in the dataset and what is it’s winpercent value?
+
+my favorite candy is Haribo Sour bears
+
+```{r}
+candy["Haribo Sour Bears",]$winpercent
+```
+
+
+>Q4. What is the winpercent value for “Kit Kat”?
+
+```{r}
+candy["Kit Kat",]$winpercent
+```
+
+
+>Q5. What is the winpercent value for “Tootsie Roll Snack Bars”?
+
+```{r}
+candy["Tootsie Roll Snack",]$winpercent
+```
+
+```{r}
+library("skimr")
+skim(candy)
+
+```
+
+>Q6. Is there any variable/column that looks to be on a different scale to the majority of the other columns in the dataset?
+
+For the other columns, the values are between 0 and 1, but for the winpercent, the values are much larger than 1. 
+
+>Q7. What do you think a zero and one represent for the candy$chocolate column?
+
+I think a zero means false (the candy is not a chocalte type) and a one means true (the candy is a chocolate type)
+
+>Q8. Plot a histogram of winpercent values
+
+```{r}
+hist(candy$winpercent)
+```
+
+
+>Q9. Is the distribution of winpercent values symmetrical?
+
+The distribution is mostly symmetrical. It follows a normal distribution pattern.
+
+>Q10. Is the center of the distribution above or below 50%?
+
+The center is slightly below 50% (between 40-50%)
+
+
+>Q11. On average is chocolate candy higher or lower ranked than fruit candy?
+
+```{r}
+chocolate <- candy$winpercent[as.logical(candy$chocolate)]
+fruit <- candy$winpercent[as.logical(candy$fruity)]
+
+mean(chocolate)
+mean(fruit)
+
+mean(chocolate)>mean(fruit)
+```
+
+On average chocolate (60.92%) is ranked higher than fruit candy (44.11%)
+
+
+>Q12. Is this difference statistically significant?
+
+```{r}
+t.test(chocolate,fruit)
+```
+
+The results are statistically significant as the p value is less than 0.05 which we use as a threshold for significance
+
+>Q13. What are the five least liked candy types in this set?
+
+```{r}
+head(candy[order(candy$winpercent,decreasing=F),], n=5)
+```
+
+The five least liked candy types are Nik L Nip, Boston Baked Beans, Chiclets, Super Bubble, and Jawbusters. 
+
+>Q14. What are the top 5 all time favorite candy types out of this set?
+
+```{r}
+head(candy[order(candy$winpercent, decreasing=T),], n=5)
+```
+
+The five most liked candies are Reese's Peanut Butter cup, Reese's miniatures, twix, kit kat, and snickers
+
+>Q15. Make a first barplot of candy ranking based on winpercent values.
+
+```{r}
+library(ggplot2)
+
+ggplot(candy) + 
+  aes(winpercent, rownames(candy)) +
+  geom_col()
+
+```
+
+>Q16. This is quite ugly, use the reorder() function to get the bars sorted by winpercent?
+
+```{r}
+ggplot(candy) + 
+  aes(winpercent, reorder(rownames(candy),winpercent)) +
+  geom_col()
+```
+
+To change the color of the bars in the graph:
+
+```{r}
+my_cols=rep("black", nrow(candy))
+my_cols[as.logical(candy$chocolate)] = "chocolate"
+my_cols[as.logical(candy$bar)] = "brown"
+my_cols[as.logical(candy$fruity)] = "pink"
+```
+
+```{r}
+ggplot(candy) + 
+  aes(winpercent, reorder(rownames(candy),winpercent)) +
+  geom_col(fill=my_cols) 
+```
+
+>Q17. What is the worst ranked chocolate candy?
+
+The worst ranked chocolate candy are sixlets as it is the shortest chocolate colored bar in the graph meaning they have the lowest win percent of all the chocolate candies.
+
+>Q18. What is the best ranked fruity candy?
+
+The best ranked fruity candy are Starbursts as they are the longest pink colored bar in the graph meaning they have the highest win percent of all the fruity candies.
+
+## Taking a look at pricepoints
+
+```{r}
+library(ggrepel)
+
+# How about a plot of price vs win
+ggplot(candy) +
+  aes(winpercent, pricepercent, label=rownames(candy)) +
+  geom_point(col=my_cols) + 
+  geom_text_repel(col=my_cols, size=3.3, max.overlaps = 15)
+```
+
+
+>Q19. Which candy type is the highest ranked in terms of winpercent for the least money - i.e. offers the most bang for your buck?
+
+```{r}
+ord <- order(candy$winpercent, decreasing = T)
+head(candy[ord,c(11,12)], n=5 )
+```
+
+Reese's Minatures are one of the highest ranked candies in terms of winpercent (2nd highest) and the cheapest (lowest pricepercent) compared to the other highly ranked candies.
+
+>Q20. What are the top 5 most expensive candy types in the dataset and of these which is the least popular?
+
+```{r}
+ord <- order(candy$pricepercent, decreasing = T)
+head(candy[ord,c(11,12)], n=5 )
+```
+The least popular of the five most expensive candies are Nik L Nips as it has one of the highest price percents but one of the lowest win percents
+
+## Exploring the correlation structure
+
+```{r}
+library(corrplot)
+```
+
+```{r}
+cij <- cor(candy)
+corrplot(cij)
+```
+
+>Q22. Examining this plot what two variables are anti-correlated (i.e. have minus values)?
+
+Fruity and chocolate are anti-correlated which can be seen because the color is dark red which corresponds to a negative number and the circle is relatively large. 
+
+
+>Q23. Similarly, what two variables are most positively correlated?
+
+Not counting the strong correlation that occurs between a variable being compared to itself (which obviously has the highest correlation), the two variables that are most positively correlated are win percent and chocolate since they have a relatively large circle and it is a semi dark blue indicating a positive correlation. This shows that chocolate is a very popular candy type which is also reflected in the bar graph above. 
+
+## PCA
+
+Let’s apply PCA using the prcom() function to our candy dataset remembering to set the scale=TRUE argument.
+
+```{r}
+pca <- prcomp(candy, scale=T)
+
+summary(pca)
+pca$rotation[,1]
+#by scaling the data, it makes it so the SD of PC1 isn't a huge number and allows us to better compare the data 
+```
+
+Now we can plot our main PCA score plot of PC1 vs PC2.
+
+```{r}
+plot(pca$x[,1:2], col=my_cols, pch=16)
+```
+
+Make a new data-frame with our PCA results and candy data
+
+```{r}
+my_data <- cbind(candy, pca$x[,1:3])
+my_data
+```
+
+Create a new plot using ggplot and the new data frame
+
+```{r}
+p <- ggplot(my_data) + 
+        aes(x=PC1, y=PC2, 
+            size=winpercent/100,  
+            text=rownames(my_data),
+            label=rownames(my_data)) +
+        geom_point(col=my_cols)
+
+p
+```
+
+Label the plot with candy names and add a title and subtitle
+
+```{r}
+library(ggrepel)
+
+p + geom_text_repel(size=2, col=my_cols, max.overlaps = 15)  + 
+  theme(legend.position = "none") +
+  labs(title="Halloween Candy PCA Space",
+       subtitle="Colored by type: chocolate bar (dark brown), chocolate other (light brown), fruity (pink), other (black)",
+       caption="Data from 538")
+
+```
+
+Generate an interactive plot
+
+```{r}
+library(plotly)
+```
+
+```{r}
+#ggplotly(p)
+```
+
+Let’s finish by taking a quick look at PCA our loadings. Do these make sense to you? Notice the opposite effects of chocolate and fruity and the similar effects of chocolate and bar (i.e. we already know they are correlated).
+
+```{r}
+par(mar=c(8,4,2,2))
+barplot(pca$rotation[,1], las=2, ylab="PC1 Contribution")
+```
+
+>Q24. What original variables are picked up strongly by PC1 in the positive direction? Do these make sense to you?
+
+The variables fruity, hard, and pluribus are picked up by PC1 in the positive direction. This makes sense to me because when you look at the previous graphs (the colored bar graph and other PC1 graphs) and the data table, the fruity candy (which is typically hard and pluribus) has a lower win percent score than the other types of candy. It has a positive PC1 score (seen in the PC1 and PC2 graphs) because it's low win percent score is the main cause for variation within the data set. The variation it causes is the reason it is picked up strongly by PC1 in the positive direction. 
