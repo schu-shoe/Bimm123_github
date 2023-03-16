@@ -1,12 +1,12 @@
 ---
 title: "Class17: mini project"
 author: "Siena Schumaker (A16520296)"
-format: pdf
+format: gfm
 ---
 
 ## Mini Project: COVID 19- vaccination records
 
-The goal of this hands-on mini-project is to examine and compare the Covid-19 vaccination rates around San Diego.
+The goal of this hands-on mini-project is to examine and compare the Covid-19 vaccination rates around San Diego. 
 
 We will start by downloading the most recently dated “Statewide COVID-19 Vaccines Administered by ZIP Code” CSV file from: https://data.ca.gov/dataset/covid-19-vaccine-progress-dashboard-data-by-zip-code
 
