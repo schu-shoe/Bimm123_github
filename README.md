@@ -17,4 +17,4 @@ My classwork from [BIMM 143](https://bioboot.github.io/bimm143_W23/) at UC San D
 - Class 16:
 - Class 17: 
 - Class 18:
-- Class 19: [Investigating Pertussis Resurgence Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Class19:Mini_Project/Class19-Investigating_Pertussis_Resurgence.qmd)
+- Class 19: Investigating Pertussis Resurgence Mini Project
