@@ -434,8 +434,8 @@ wisc.hclust.
 wisc.hclust <- hclust(data.dist)
 ```
 
-> Q11. Using the plot() and abline() functions, what is the height at
-> which the clustering model has 4 clusters?
+> Q11. Using the plot() what is the height at which the clustering model
+> has 4 clusters?
 
 at a height of 19
 
@@ -472,28 +472,19 @@ table(grps,diagnosis)
 > a different number of clusters between 2 and 10?
 
 ``` r
-group <- cutree(wisc.hclust, k=10)
+group <- cutree(wisc.hclust, k=4)
 table(group, diagnosis)
 ```
 
          diagnosis
     group   B   M
-       1   12  86
-       2    0  59
-       3    0   3
-       4  331  39
-       5    0  20
-       6    2   0
-       7   12   0
-       8    0   2
-       9    0   2
-       10   0   1
+        1  12 165
+        2   2   5
+        3 343  40
+        4   0   2
 
-By cutting it into more groups instead of four (groups \> 4), you get a
-better cluster vs diagnosis match as the groups become more defined with
-mostly one type of diagnosis per group. The less groups you have, the
-more there are both types of diagnoses in one group. More clusters
-allows hierarchal clustering to separate the diagnoses better.
+Cutting the clusters into groups of four yield the greatest accuracy
+(\~89%)
 
 # combine methods: PCA and HCLUST
 
