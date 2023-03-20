@@ -1,4 +1,4 @@
-Class_19:Investigating_Pertussis_Resurgence
+Class 19:Investigating Pertussis Resurgence
 ================
 
 ## Investigating Pertussis Resurgence
