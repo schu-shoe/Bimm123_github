@@ -1,4 +1,4 @@
-Class 11: Genome Informatics Section 4
+Class 11: Genome Informatics
 ================
 Siena Schumaker
 
@@ -11,7 +11,7 @@ normalization on a genome level. Now, you want to find whether there is
 any association of the 4 asthma-associated SNPs (rs8067378…) on ORMDL3
 expression.
 
-> Q13: Read this file into R and determine the sample size for each
+> Q1: Read this file into R and determine the sample size for each
 > genotype and their corresponding median expression levels for each of
 > these genotypes. Hint: The read.table(), summary() and boxplot()
 > functions will likely be useful here. There is an example R script
@@ -83,7 +83,7 @@ G/G genotype is 20.07.
 library(ggplot2)
 ```
 
-> Q14: Generate a boxplot with a box per genotype, what could you infer
+> Q2: Generate a boxplot with a box per genotype, what could you infer
 > from the relative expression value between A/A and G/G displayed in
 > this plot? Does the SNP effect the expression of ORMDL3? Hint: An
 > example boxplot is provided overleaf – yours does not need to be as
