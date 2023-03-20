@@ -14,7 +14,7 @@ My classwork from [BIMM 143](https://bioboot.github.io/bimm143_W23/) at UC San D
 - Class 13: [Pathway Analysis from RNA-Seq Results Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Mini%20Project:%20Pathway%20Analysis%20from%20RNA-Seq%20Results/MiniProject%20Pathway%20analysis%20.md)
 - Class 14: Git Hub Repo
 - Class 15: Essential UNIX for bioinformatics
-- Class 16: [Analyzing sequencing data in the cloud](
+- Class 16: [Analyzing sequencing data in the cloud](https://github.com/schu-shoe/Bimm143_github/blob/main/Class_16_Extra_credit2/Class_16_cloud.md)
 - Class 17: [Vaccination Rate Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Class17/class17_miniproject.md)
-- Class 18:
+- Class 18: [Cancer Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Class_18:Cancer_Mini_Project/class18_cancer_mini_project.md)
 - Class 19: [Investigating Pertussis Resurgence Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Class19:Mini_Project/Class19-Investigating_Pertussis_Resurgence.md)
