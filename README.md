@@ -5,7 +5,7 @@ My classwork from [BIMM 143](https://bioboot.github.io/bimm143_W23/) at UC San D
 - Class 4: Introduction to R
 - Class 5: [Data Visualization with ggplot2](https://github.com/schu-shoe/Bimm143_github/blob/main/class05/class05.md)
 - Class 6: R functions
-- Class 7: Machine learning for Bioinformatics
+- Class 7: [Machine learning for Bioinformatics](https://github.com/schu-shoe/Bimm143_github/blob/main/Class%2007:%20Machine%20learning%201/Class7.md)
 - Class 8: Unsupervised Learning Mini Project
 - Class 9: Structural Bioinformatics
 - Class 10: [Halloween Candy Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Halloween%20Mini%20Project/Halloween%20mini%20project.qmd)
