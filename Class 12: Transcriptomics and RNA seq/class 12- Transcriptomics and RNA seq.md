@@ -46,8 +46,6 @@ ncol(counts)
 
     [1] 8
 
-> Q2. How many ‘control’ cell lines do we have?
-
 and the metadata a.k.a “colData”
 
 ``` r
@@ -87,6 +85,16 @@ all(check)
 ```
 
     [1] TRUE
+
+> Q2. How many ‘control’ cell lines do we have?
+
+``` r
+table(metadata$dex)
+```
+
+
+    control treated 
+          4       4 
 
 \#Analysis by hand
 
@@ -187,7 +195,7 @@ Make a plot to see how we are doing
 plot(mean.counts$control.mean, mean.counts$treated.mean)
 ```
 
-![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-14-1.png)
+![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-15-1.png)
 
 > Q5 (b).You could also use the ggplot2 package to make this figure
 > producing the plot below. What geom\_?() function would you use for
@@ -212,7 +220,7 @@ plot(mean.counts$control.mean, mean.counts$treated.mean, log="xy")
     Warning in xy.coords(x, y, xlabel, ylabel, log): 15281 y values <= 0 omitted
     from logarithmic plot
 
-![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-15-1.png)
+![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-16-1.png)
 
 The spread means that the points above the line mean that there is more
 in the treated than in the control and if it’s below then there’s more
@@ -509,7 +517,7 @@ person happy with one cool plot!
 plot(res$log2FoldChange, res$padj)
 ```
 
-![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-35-1.png)
+![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-36-1.png)
 
 Improve this plot by taking the log of that p-value axis
 
@@ -517,7 +525,7 @@ Improve this plot by taking the log of that p-value axis
 plot(res$log2FoldChange, log(res$padj))
 ```
 
-![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-36-1.png)
+![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-37-1.png)
 
 Note: the more neg the log(p value), the smaller the p value is
 
@@ -528,7 +536,7 @@ p-value or high log(p-values) are at the top of the axis)
 plot(res$log2FoldChange, -log(res$padj))
 ```
 
-![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-37-1.png)
+![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-38-1.png)
 
 you want to be looking at the points that are “erupting from the
 volcano”. These points have a significant (low p value) log fold change
@@ -554,7 +562,7 @@ abline(v=c(-2,2), col="gray", lty=2)
 abline(h=-log(0.1), col="gray", lty=2)
 ```
 
-![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-38-1.png)
+![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-39-1.png)
 
 ## Section 5: Adding annotation data
 
@@ -733,7 +741,7 @@ abline(v=c(-2,2), col="gray", lty=2)
 abline(h=-log(0.1), col="gray", lty=2)
 ```
 
-![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-46-1.png)
+![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-47-1.png)
 
 ``` r
 library(EnhancedVolcano)
@@ -752,7 +760,7 @@ EnhancedVolcano(x,
     y = 'pvalue')
 ```
 
-![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-48-1.png)
+![](class-12--Transcriptomics-and-RNA-seq_files/figure-commonmark/unnamed-chunk-49-1.png)
 
 ## Section 7: Pathway analysis
 
