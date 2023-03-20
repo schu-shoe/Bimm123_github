@@ -11,7 +11,7 @@ My classwork from [BIMM 143](https://bioboot.github.io/bimm143_W23/) at UC San D
 - Class 10: [Halloween Candy Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Halloween%20Mini%20Project/Halloween%20mini%20project.md)
 - Class 11: [Genome Informatics](https://github.com/schu-shoe/Bimm143_github/blob/main/Class%2011:%20Genome%20Informatics/class11-%20genome%20informatics.md)
 - Class 12: [Transcriptomics and RNA seq](https://github.com/schu-shoe/Bimm143_github/blob/main/Class%2012:%20Transcriptomics%20and%20RNA%20seq/class%2012-%20Transcriptomics%20and%20RNA%20seq.md)
-- Class 13:[Pathway Analysis from RNA-Seq Results Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Mini%20Project:%20Pathway%20Analysis%20from%20RNA-Seq%20Results/MiniProject%20Pathway%20analysis%20.md)
+- Class 13: [Pathway Analysis from RNA-Seq Results Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Mini%20Project:%20Pathway%20Analysis%20from%20RNA-Seq%20Results/MiniProject%20Pathway%20analysis%20.md)
 - Class 14:
 - Class 15:
 - Class 16:
