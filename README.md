@@ -8,8 +8,8 @@ My classwork from [BIMM 143](https://bioboot.github.io/bimm143_W23/) at UC San D
 - Class 7: [Machine learning for Bioinformatics](https://github.com/schu-shoe/Bimm143_github/blob/main/Class%2007:%20Machine%20learning%201/Class7.md)
 - Class 8: [Machine Learning Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Class%2008%20Mini%20Project/Class%208%20Machine%20learning%20mini%20project.md)
 - Class 9: [Structural Bioinformatics](https://github.com/schu-shoe/Bimm143_github/blob/main/Class09/class09%20structural%20bioinformatics%201.md)
-- Class 10: [Halloween Candy Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Halloween%20Mini%20Project/Halloween%20mini%20project.qmd)
-- Class 11: 
+- Class 10: [Halloween Candy Mini Project](https://github.com/schu-shoe/Bimm143_github/blob/main/Halloween%20Mini%20Project/Halloween%20mini%20project.md)
+- Class 11: [Genome Informatics](https://github.com/schu-shoe/Bimm143_github/blob/main/Class%2011:%20Genome%20Informatics/class11-%20genome%20informatics.md)
 - Class 12: [Transcriptomics and RNA seq](https://github.com/schu-shoe/Bimm143_github/blob/main/Class%2012:%20Transcriptomics%20and%20RNA%20seq/class%2012-%20Transcriptomics%20and%20RNA%20seq.md)
 - Class 13:
 - Class 14:
